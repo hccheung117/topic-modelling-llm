@@ -1,0 +1,6 @@
+---
+description: 
+globs: test_*.py
+alwaysApply: false
+---
+Build unit tests based on Python's built-in unittest rather than pytest.
