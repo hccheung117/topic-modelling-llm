@@ -14,6 +14,20 @@ This project collects, deduplicates, and analyses Hacker News stories and commen
 
 The project's architecture is composed of four primary components. These components collaborate to execute a multi-stage data processing and analysis pipeline.
 
+```mermaid
+graph TD
+    PS["Processing Stages (Notebooks)"]
+    SL["Service Libraries <br/> (LLM, Embeddings)"]
+    DS["Data Storage"]
+    UT["Utility Tools"]
+
+    PS -->|Uses| SL
+    PS -->|Reads/Writes to| DS
+    SL -->|Manages data in| DS
+    UT -->|Uses| SL
+    UT -->|Accesses/Modifies| DS
+```
+
 ### Main Components
 
 - **Processing Stages (Notebooks)**:
