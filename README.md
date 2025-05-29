@@ -91,8 +91,9 @@ Create a `.env` file in the project root with the following variables:
     1. `01_download_stories.ipynb` – Download stories from Hacker News.
     2. `02_deduplicate_stories.ipynb` – Deduplicate and clean the stories.
     3. `03_extract_story_keywords.ipynb` – Extract LLM and DEV keywords using an LLM API.
-    4. `04_analyse_story_keywords.ipynb` – Compute embeddings, cluster keywords, and analyse topics.
-    5. `05_download_comments.ipynb` – Download and process comments for each story.
+  4. `04_embed_story_keywords.ipynb` – Compute embeddings.
+  5. `05_cluster_story_embeddings.ipynb` – Cluster keywords and analyse topics.
+  6. `06_download_comments.ipynb` – Download and process comments for each story.
 - The scripts and notebooks are modular; you can adapt or extend them for your own research.
 
 ## Testing
