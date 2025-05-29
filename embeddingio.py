@@ -32,6 +32,15 @@ class EmbeddingStore:
         )
         self.conn.commit()
 
+    def get_all_embeddings(self) -> Dict[str, np.ndarray]:
+        self.cursor.execute("SELECT keyword, embedding FROM keyword_embeddings")
+        all_embeddings = {}
+        for keyword, embedding_blob in self.cursor.fetchall():
+            arr = np.frombuffer(embedding_blob, dtype=np.float32)
+            arr = np.array(arr, dtype=np.float32)
+            all_embeddings[keyword] = arr
+        return all_embeddings
+
     def get_embeddings(self, keywords: List[str]) -> Dict[str, np.ndarray]:
         if not keywords:
             return {}
